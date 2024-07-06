@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form class="cadaster" method="post" action="/enviar">
+        <input type="text" name="inputTask">
+        <button type="submit">Add</button>
+    </form>
+
+    <section class="conteiner">
+        <ul class="tasks">
+
+            <% tasks.forEach(task => { %>
+                <li class="task" id="task<%= task.id %>">
+                    <input type="checkbox" name="taskDone" id="<%= task.id %>" class="checkBoxs" data-task-id="<%= task.id %>">
+                    <p><%= task.task %></p>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+</body>
+
+<script src="/script.js"></script>
+</html>
